@@ -8,7 +8,7 @@ all : lex.yy.c y.tab.c ast.c symbols.c
 	$(CC) $(CFLAGS) -o $(name) y.tab.c lex.yy.c structures.c ast.c symbols.c semantics.c codeGen.c  -ll -ly
 
 lex.yy.c : ijscanner.l
-	lex $(name).l
+	Flex $(name).l
 
 y.tab.c:
 	bison -d -y -r all $(name).y
